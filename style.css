@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fffffb;
+    font-family: "Nunito" ;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+p{
+    color:#2C2C2B;
+}
+
+footer{
+    background-color: #2C2C2B;
+    align-items: center;
+    text-align: center;
+    bottom: 0;
+    margin-top: auto;
+    padding: 1rem;
+}
+
+footer p{
+    color: #fffffb;
+    padding: 0rem;
+}
+
+.navlink-fake{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fffffb;
+}
+
+.nav-link{
+    color: #2C2C2B;
+    text-decoration: none;
+} 
+
+.socialmedia{
+    display: inline-block;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+h1, h2, h3{
+    margin-left: 2.5rem;
+    color: #3A7CA5;
+}
+
+h1{
+    text-align: center;
+} 
+
+.text {
+    margin-left: 2.5rem;
+} 
+
+.primary-dark, .primary-darkp {
+    background-color: #2C2C2B;
+    color: #fffffb;
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.primary-dark:hover, .primary-darkp:hover {
+background-color: #fffffb;
+color: #2C2C2B;
+border: 3px solid #2C2C2B;
+}
+
+.primary-darkp {
+font-weight: bolder;
+text-decoration: none;
+}
+.primary-darkp:hover {
+color: #2C2C2B;
+} 
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.product-img {
+    width: 300px;
+    height: 280px;
+}
+
+.flex-item{
+    flex-grow: 1;
+    margin: 20px;
+    max-width: 320px;
+    border: 0.05rem solid #fffffb;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.flex-item:hover {
+    border-color: #2C2C2B;
+    box-shadow: 0rem 0rem 0.25rem #2C2C2B;
+}
+
+.buy--cta {
+    text-align: center;
+    padding: 2rem;
+}
+
+input[type="submit"]{
+    background-color: #2C2C2B;
+    text-align: center;
+    color: #fffffb;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    font-size: larger;
+    width: 14rem
+}
+
+.login--user {
+    text-align: left;
+    margin-left: 2.5rem;
+    padding: 2rem;
+}
+
+input {
+    display: block;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #2C2C2B;  
+    margin-bottom: 1rem;
+    width: 50%
+}
+
