@@ -1,38 +1,67 @@
-const container = document.querySelector('.flex-container');
-let contador = 0
+//Array de productos -- STOCK
 
-function createProducts(name, model, price){
-    contador ++;
-    img = "<img class='product-img' src=`./assets/${name}.PNG`>";
-    name = `<h4> ${name} </h4>`;
-    model = `<p> ${model} </p>`;
-    price = `<p> $${price} </p>`;
-    return [img, name, model, price]
-    } 
+const products = 
+[
+    {
+        id: 1,
+        name: 'Cat Cave',
+        price: 42.50,
+        quantity: 1,
+        img: './assets/images/cat--cave.png'
+    },
+    {
+        id: 2,
+        name: 'Cat Travel Bag',
+        price: 22,
+        quantity: 1,
+        img: './assets/images/cat--traveller.png'
+    },
+    {
+        id: 3,
+        name: 'Brown Collar for Dogs',
+        price: 5.5,
+        quantity: 1,
+        img: './assets/images/dog--collar--brown.png'
+    },
+    {
+        id: 4,
+        name: 'Blue Collar for Dogs',
+        price: 5.5,
+        quantity: 1,
+        img: './assets/images/dog--collar--blue.png'
+    }
+]
 
-const changeHidden = (number) =>{
-    document.querySelector(".product-data").value = number
-}
+//FUNCION PARA RENDERIZAR PRODUCTOS
 
-let documentFragment = document.createDocumentFragment();
+const displayProducts = (products) => {
+    const containerProducts = document.getElementById('container-product');
+    containerProducts.innerHTML = "";
 
-for (let i = 0; i <= 20; i++) {
-        let modelRandom = Math.round(Math.random()*10000);
-        let priceRandom = Math.round(Math.random()*10+30);
-        let product = createProducts(`Product ${i}`, `model ${modelRandom}`, priceRandom)   
-    let div = document.createElement ("DIV" );
-    addEventListener("click", ()=>{changeHidden(modelRandom)})
-    div.classList.add(`item-${i}`, 'flex-item');
-    div.innerHTML = product[0] + product[1] + product[2] + product[3];
-    documentFragment.appendChild(div)
-}
+    products.forEach((product) => {
+        const div = document.createElement('div');
+        div.classList.add('card');
+        div.innerHTML += `<div class="card-image">
+                            <img src=${product.img}>  
+                            <span class="card-title">${product.name}</span>
+                            <a id=boton${product.id}><i>add_shopping_cart</i></a>
+                            <div class="card-content">
+                            <p>${product.price}</p>
+                        </div>
+                        `
 
-container.appendChild(documentFragment);
+        containerProducts.appendChild(div);
+        const button = document.getElementById(`boton${product.id}`);
+        button.addEventListener("click", () => {
+            validateRepeatedProduct(product.id);
+        });
+    });
+};
 
-// buyButton.addEventListener("click", (e) => {
-//     alert('The product is added to the shopping cart')
-//     e.preventDefault();
-// })
+displayProducts(products)
+
+//
+
 
 
 
@@ -42,11 +71,11 @@ container.appendChild(documentFragment);
 const username = document.getElementById("username")
 const surname = document.getElementById("surname")
 const email = document.getElementById("email")
-const button = document.getElementById("btn-send")
+const buttonForm = document.getElementById("btn-send")
 const result = document.querySelector(".result")
 
 
-button.addEventListener("click", (e) => {
+buttonForm.addEventListener("click", (e) => {
     e.preventDefault();
     let error = validateField ();
     if (error [0]){
@@ -72,3 +101,4 @@ const validateField = () => {
     error [0] = false;
     return error
 }
+
