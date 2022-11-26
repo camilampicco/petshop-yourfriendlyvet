@@ -34,3 +34,20 @@ const validateField = () => {
     return error
 }
 
+
+//Guardo datos con JSON
+const names = [
+    { id: 1, name: 'Ana'},
+    { id: 2, name: 'Clara'},
+    { id: 3, name: 'Sofi'},
+];
+
+const saveLocal = (key, value) => {
+    localStorage.setItem(key, value);
+}
+
+saveLocal('List of Names', JSON.stringify(names));
+
+for (const name of names) {
+    saveLocal(name.id, JSON.stringify(name))
+}
